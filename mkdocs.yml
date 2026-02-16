@@ -1,7 +1,7 @@
 site_name: Soumya Shreeram
 site_description: Astrophysics | Research software developer
 site_author: Soumya Shreeram
-site_url: https://soumya_shreeram.github.io
+site_url: https://soumyashreeram.github.io/soumya_shreeram.github.io/
 
 theme:
   name: material
@@ -19,9 +19,8 @@ theme:
 
 nav:
   - Home: index.md
-  - Research: research.md
   - Publications: publications.md
-  - Lightcone Project: lightcone.md
+  - TNG Lightcone: lightcone.md
   - Data & Software: data.md
   - Contact: contact.md
 

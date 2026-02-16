@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+# Soumya Shreeram
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+I am an astrophysicist and research software developer. I completed my PhD at the Max Planck Institute for Extraterrestrial Physics,
+where I focused on forward modelling the hot circumgalactic medium in X-rays.
+You can find my doctoral thesis [here](https://edoc.ub.uni-muenchen.de/36138/). Prior to this, I completed my Master's in Physics at EPFL and my Bachelor's in Physics with Astrophysics at the
+University of Manchester.
 
-## Commands
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+You can find my publications [here](publications.md). My science projects are summarized below.
 
-## Project layout
+---
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+# Science Projects
+
+- Pulsars
+- Galaxies
+- Hot gas around galaxies
+- Black holes
