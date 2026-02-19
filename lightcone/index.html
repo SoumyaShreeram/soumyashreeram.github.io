@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tng300-x-ray-lightcone" class="md-skip">
+        <a href="#tng300-x-ray-lightcone-lc-tngx" class="md-skip">
           Skip to content
         </a>
       
@@ -273,25 +273,6 @@
   
 
       
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../contact/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Contact
-
-      </a>
-    </li>
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -457,13 +438,74 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#galaxy-and-halo-catalogues" class="md-nav__link">
+  <a href="#directory-file-descriptions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Galaxy and Halo Catalogues
+        Directory &amp; File Descriptions
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gasproperties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GasProperties/
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GasProperties/">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#haloproperties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HaloProperties/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observer_locationsnpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        observer_locations.npy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snapshot_infocsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        snapshot_info.csv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stacked_data_products_050-200_kev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stacked_data_products_0.50-2.00_keV/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -490,33 +532,6 @@
     
   
     Data & Software
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../contact/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Contact
   
 
     
@@ -567,13 +582,74 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#galaxy-and-halo-catalogues" class="md-nav__link">
+  <a href="#directory-file-descriptions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Galaxy and Halo Catalogues
+        Directory &amp; File Descriptions
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gasproperties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GasProperties/
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GasProperties/">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#haloproperties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HaloProperties/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observer_locationsnpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        observer_locations.npy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#snapshot_infocsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        snapshot_info.csv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stacked_data_products_050-200_kev" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stacked_data_products_0.50-2.00_keV/
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -594,26 +670,29 @@
 
 
 
-<h1 id="tng300-x-ray-lightcone">TNG300 X-ray Lightcone</h1>
-<p>The lightcone is described in detail in Shreeram et al. 2025a: <a href="https://www.aanda.org/articles/aa/abs/2025/05/aa52271-24/aa52271-24.html">Quantifying Observational Projection Effects with a Simulation-Based Hot CGM Model</a>; particularly see Sec. 2. Here we give some key details and expand on the data structure of the public TNG300-based X-ray lightcone, so called LC-TNGX, which is made available <a href="../data/#lc-tngx">here</a>. </p>
-<p>We use the <a href="https://www.tng-project.org/">IllustrisTNG cosmological hydrodynamical simulation</a> with the box of side length <span class="arithmatex">\(302.6\)</span> Mpc (TNG300). The TNG simulations adopt the Planck cosmological parameters, with the matter density parameter <span class="arithmatex">\(\Omega_m = \Omega_{dm} + \Omega_b = 0.3089\)</span>, baryonic density parameter <span class="arithmatex">\(\Omega_b = 0.0486\)</span>, Hubble constant <span class="arithmatex">\(H_0 = 100h\)</span> km s<span class="arithmatex">\(^{-1}\)</span> Mpc<span class="arithmatex">\(^{-1}\)</span> with <span class="arithmatex">\(h = 0.6774\)</span>, and <span class="arithmatex">\(\Omega_\Lambda = 0.6911\)</span>. The Friends-of-Friends (FoF) algorithm is applied to the dark matter particles with linking length <span class="arithmatex">\(b = 0.2\)</span> to obtain the halos. The subhalos are retrieved with SUBFIND, which detects gravitationally bound substructures that are equivalent to galaxies in observations. SUBFIND also classifies the subhalos into centrals and satellites, where centrals are the most massive substructure within a distinct halo.</p>
+<h1 id="tng300-x-ray-lightcone-lc-tngx">TNG300 X-ray Lightcone, LC-TNGX</h1>
+<p>LC-TNGX that is made available <a href="../data/#lc-tngx">here</a>. Here we give some key details and expand on the data structure of the public TNG300-based X-ray lightcone.</p>
+<p>We use the <a href="https://www.tng-project.org/">IllustrisTNG cosmological hydrodynamical simulation</a> with the box of side length <span class="arithmatex">\(302.6\)</span> Mpc (TNG300) to construct a lightcone. The lightcone is described in detail in Shreeram et al. 2025a: <a href="https://www.aanda.org/articles/aa/abs/2025/05/aa52271-24/aa52271-24.html">Quantifying Observational Projection Effects with a Simulation-Based Hot CGM Model</a>; particularly see Sec. 2. </p>
+<p><img alt="Lightcone structure" src="../images/figure1.png" />
+<em>Figure 1 from <a href="https://www.aanda.org/articles/aa/pdf/2025/05/aa52271-24.pdf">Shreeram et al. 2025a</a>, which is an illustration of the lightcone built using TNG300 in the x − y plane.</em></p>
 <h2 id="lightcone-construction">Lightcone Construction</h2>
-<p>LC-TNGX models the hot gas emission in the redshift range <span class="arithmatex">\(0.03 \lesssim z \lesssim 0.3\)</span>, to mock observations in the local Universe. For this purpose, we box remap all snapshots into a configuration where the longest length of one of the sides is approximately four times the original length (<a href="https://iopscience.iop.org/article/10.1088/0067-0049/190/2/311">Carlson &amp; White 2010</a>; see also <a href="https://mwhite.berkeley.edu/BoxRemap/">this</a> website). This technique ensures that the new elongated box has a one-to-one remapping, remains volume-preserving, and keeps local structures intact. For a box whose original dimensions are normalized to <span class="arithmatex">\((1,1,1)\)</span>, the unique solution for the transformed box sides is <span class="arithmatex">\((4.1231, 0.7276, 0.3333)\)</span>. We remap the coordinates of particles (gas, and dark matter) as well as the halo and subhalo catalogues.</p>
-<p>There are 22 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, we obtain 22 remapped particle/gas cell cuboids and 22 remapped galaxy catalogue cuboids at redshift <span class="arithmatex">\(z &lt; 0.3\)</span>. We define the observer's position as being at a corner of the smallest face. The opening angles for the observer are <span class="arithmatex">\((\theta_{\rm LC\,obs}, \phi_{\rm LC\,obs}) = (10.16^\circ, 4.64^\circ)\)</span>. The area subtended on the sky for a given observer is <span class="arithmatex">\(47.28\, \mathrm{deg}^2\)</span>. We illustrate the lightcone constructed with the box remap technique in Fig. 1. We also publicly release <a href="../data/">LightGen</a>, the code used for generating the lightcone in this work.</p>
-<h2 id="galaxy-and-halo-catalogues">Galaxy and Halo Catalogues</h2>
-<p>The distinct halos <span class="arithmatex">\( \mathrm{CEN}^{\rm sim}_{\rm halo} \)</span> and subhalos within LC-TNG300 are catalogued with their physical properties and binned in stellar mass and halo mass bins. We have 5,109 centrals and 2,719 satellites of stellar mass in the Milky Way range <span class="arithmatex">\(M_\star = 10^{10.5-11} M_\odot\)</span>, which is sufficient to statistically model the projection effects in these halos.</p>
-<p>The stellar mass used from TNG300 is defined as the mass within twice the stellar half-mass radius. We present quantities relative to both critical and mean densities because <span class="arithmatex">\(R_{500c}\)</span> is the radius at which the density of the halo is <span class="arithmatex">\(500\times\)</span> the critical density of the Universe and is most commonly used by X-ray astronomers, whereas <span class="arithmatex">\(R_{200m}\)</span> is the radius at which the density of the halo is <span class="arithmatex">\(200\times\)</span> the mean matter density and represents the halo’s virial radius. The galaxy catalogue is divided into central, <span class="arithmatex">\( \mathrm{CEN}^{\rm sim} \)</span>, and satellites, <span class="arithmatex">\( \mathrm{SAT}^{\rm sim} \)</span>, for the concerned stellar mass bins. To construct the <span class="arithmatex">\( \mathrm{SAT}^{\rm sim} \)</span> catalogue, we match all the central galaxies with the distinct halos, thereby leaving behind the secondary subhalos classified as satellites.</p>
-<h1 id="figures">Figures</h1>
-<!-- Insert your four figures here -->
-
-<h2 id="figure-1">Figure 1</h2>
-<p><img alt="Lightcone structure" src="../images/figure1.png" /></p>
-<h2 id="figure-2">Figure 2</h2>
-<p><img alt="Projection illustration" src="../images/figure2.jpeg" /></p>
-<h2 id="figure-3">Figure 3</h2>
-<p><img alt="Stacked profiles" src="../images/figure3.jpeg" /></p>
-<h2 id="figure-4">Figure 4</h2>
-<p><img alt="Cosmic web impact" src="../images/figure4.png" /></p>
+<p>LC-TNGX models the hot gas emission in X-rays in the redshift range <span class="arithmatex">\(0.03 \lesssim z \lesssim 0.3\)</span>, to mock observations in the local Universe. The code used for generating the lightcone also publicly available: <a href="../data/">LightGen</a>.  </p>
+<p><img alt="Projection illustration" src="../images/figure2.jpeg" />
+<em>Figure 2 from <a href="https://www.aanda.org/articles/aa/pdf/2025/05/aa52271-24.pdf">Shreeram et al. 2025a</a>, showing the projected rest-frame X-ray events from the TNG300 ligthcone in the 0.5−2.0 keV band.</em></p>
+<p>We box remap all snapshots into a configuration where the longest length of one of the sides is approximately four times the original length (<a href="https://iopscience.iop.org/article/10.1088/0067-0049/190/2/311">Carlson &amp; White 2010</a>; see also <a href="https://mwhite.berkeley.edu/BoxRemap/">this</a> website). This technique ensures that the new elongated box has a one-to-one remapping, remains volume-preserving, and keeps local structures intact. For a box whose original dimensions are normalized to <span class="arithmatex">\((1,1,1)\)</span>, the unique solution for the transformed box sides is <span class="arithmatex">\((4.1231, 0.7276, 0.3333)\)</span>. We remap the coordinates of the gas cells and dark matter particles as well as the halo and subhalo catalogues.</p>
+<h2 id="directory-file-descriptions">Directory &amp; File Descriptions</h2>
+<p>There are 22 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data within the LC-TNGX directories is structured into 22 snapshot directories. E.g., <code>snapdir_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Each snapshot of the lightcone is further divided into subshells (or bins). Snapshot numbering matches the standard IllustrisTNG convention.</p>
+<h2 id="gasproperties"><code>GasProperties/</code></h2>
+<p>Contains properties of gas cells throughout the lightcone. These files describe the thermodynamic and physical properties of the gas contributing to the lightcone.</p>
+<h3 id="haloproperties"><code>HaloProperties/</code></h3>
+<p>Contains halo and subhalo catalogs for each snapshot. There is one file per snapshot that includes all relevant halo (central galaxy) information.</p>
+<h3 id="observer_locationsnpy"><code>observer_locations.npy</code></h3>
+<p>Defines the possible observer locations for the generated lightcone. This lightcone and all the data products corresponds the base case observer located at (0, 0, 0). Nevertheless, 8 possible observer positions are possible.</p>
+<h3 id="snapshot_infocsv"><code>snapshot_info.csv</code></h3>
+<p>Provides metadata describing the structure of the lightcone. Includes information such as: snapshot boundaries within the lightcone, redshift ranges, etc.</p>
+<p>⚠️ <strong>Recommended starting point:</strong> users are encouraged to inspect this file first to understand the overall layout and organization of the lightcone.</p>
+<h3 id="stacked_data_products_050-200_kev"><code>Stacked_data_products_0.50-2.00_keV/</code></h3>
+<p>Contains X-ray and gas profiles for every halos in a given <strong>stellar mass</strong> or <strong>halo mass</strong> bin within the <strong>0.50–2.00 keV</strong> energy band. The mean of these profiles in a given mass bin gives the stacked X-ray profile.</p>
 
 
 
