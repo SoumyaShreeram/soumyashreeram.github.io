@@ -446,9 +446,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Directory &amp; File Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#gasproperties" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -457,8 +458,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="GasProperties/">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#haloproperties" class="md-nav__link">
@@ -590,9 +590,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Directory &amp; File Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#gasproperties" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -601,8 +602,7 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="GasProperties/">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#haloproperties" class="md-nav__link">
@@ -671,28 +671,28 @@
 
 
 <h1 id="tng300-x-ray-lightcone-lc-tngx">TNG300 X-ray Lightcone, LC-TNGX</h1>
-<p>LC-TNGX that is made available <a href="../data/#lc-tngx">here</a>. Here we give some key details and expand on the data structure of the public TNG300-based X-ray lightcone.</p>
+<p>LC-TNGX is made available <a href="../data/#lc-tngx">here</a>. Here, we give some key details and expand on the data structure of the public TNG300-based X-ray lightcone.</p>
 <p>We use the <a href="https://www.tng-project.org/">IllustrisTNG cosmological hydrodynamical simulation</a> with the box of side length <span class="arithmatex">\(302.6\)</span> Mpc (TNG300) to construct a lightcone. The lightcone is described in detail in Shreeram et al. 2025a: <a href="https://www.aanda.org/articles/aa/abs/2025/05/aa52271-24/aa52271-24.html">Quantifying Observational Projection Effects with a Simulation-Based Hot CGM Model</a>; particularly see Sec. 2. </p>
 <p><img alt="Lightcone structure" src="../images/figure1.png" />
 <em>Figure 1 from <a href="https://www.aanda.org/articles/aa/pdf/2025/05/aa52271-24.pdf">Shreeram et al. 2025a</a>, which is an illustration of the lightcone built using TNG300 in the x − y plane.</em></p>
 <h2 id="lightcone-construction">Lightcone Construction</h2>
-<p>LC-TNGX models the hot gas emission in X-rays in the redshift range <span class="arithmatex">\(0.03 \lesssim z \lesssim 0.3\)</span>, to mock observations in the local Universe. The code used for generating the lightcone also publicly available: <a href="../data/">LightGen</a>.  </p>
+<p>LC-TNGX models the hot gas emission in X-rays in the redshift range <span class="arithmatex">\(0.03 \lesssim z \lesssim 0.3\)</span>, to mock observations in the local Universe. The code used to generate the lightcone is also publicly available: <a href="../data/">LightGen</a>.  </p>
 <p><img alt="Projection illustration" src="../images/figure2.jpeg" />
 <em>Figure 2 from <a href="https://www.aanda.org/articles/aa/pdf/2025/05/aa52271-24.pdf">Shreeram et al. 2025a</a>, showing the projected rest-frame X-ray events from the TNG300 ligthcone in the 0.5−2.0 keV band.</em></p>
-<p>We box remap all snapshots into a configuration where the longest length of one of the sides is approximately four times the original length (<a href="https://iopscience.iop.org/article/10.1088/0067-0049/190/2/311">Carlson &amp; White 2010</a>; see also <a href="https://mwhite.berkeley.edu/BoxRemap/">this</a> website). This technique ensures that the new elongated box has a one-to-one remapping, remains volume-preserving, and keeps local structures intact. For a box whose original dimensions are normalized to <span class="arithmatex">\((1,1,1)\)</span>, the unique solution for the transformed box sides is <span class="arithmatex">\((4.1231, 0.7276, 0.3333)\)</span>. We remap the coordinates of the gas cells and dark matter particles as well as the halo and subhalo catalogues.</p>
+<p>We box remap all snapshots into a configuration where the most extended length of one of the sides is approximately four times the original length (<a href="https://iopscience.iop.org/article/10.1088/0067-0049/190/2/311">Carlson &amp; White 2010</a>; see also <a href="https://mwhite.berkeley.edu/BoxRemap/">this</a> website). This technique ensures that the new elongated box has a one-to-one remapping, remains volume-preserving, and preserves local structures. For a box whose original dimensions are normalized to <span class="arithmatex">\((1,1,1)\)</span>, the unique solution for the transformed box sides is <span class="arithmatex">\((4.1231, 0.7276, 0.3333)\)</span>. We remap the coordinates of the gas cells, dark matter particles, and the halo and subhalo catalogues.</p>
 <h2 id="directory-file-descriptions">Directory &amp; File Descriptions</h2>
 <p>There are 22 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data within the LC-TNGX directories is structured into 22 snapshot directories. E.g., <code>snapdir_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Each snapshot of the lightcone is further divided into subshells (or bins). Snapshot numbering matches the standard IllustrisTNG convention.</p>
-<h2 id="gasproperties"><code>GasProperties/</code></h2>
+<h3 id="gasproperties"><code>GasProperties/</code></h3>
 <p>Contains properties of gas cells throughout the lightcone. These files describe the thermodynamic and physical properties of the gas contributing to the lightcone.</p>
 <h3 id="haloproperties"><code>HaloProperties/</code></h3>
 <p>Contains halo and subhalo catalogs for each snapshot. There is one file per snapshot that includes all relevant halo (central galaxy) information.</p>
 <h3 id="observer_locationsnpy"><code>observer_locations.npy</code></h3>
-<p>Defines the possible observer locations for the generated lightcone. This lightcone and all the data products corresponds the base case observer located at (0, 0, 0). Nevertheless, 8 possible observer positions are possible.</p>
+<p>Defines the possible observer locations for the generated lightcone. This lightcone and all the data products correspond to the base case observer located at (0, 0, 0). Nevertheless, 8 possible observer positions are possible.</p>
 <h3 id="snapshot_infocsv"><code>snapshot_info.csv</code></h3>
 <p>Provides metadata describing the structure of the lightcone. Includes information such as: snapshot boundaries within the lightcone, redshift ranges, etc.</p>
 <p>⚠️ <strong>Recommended starting point:</strong> users are encouraged to inspect this file first to understand the overall layout and organization of the lightcone.</p>
 <h3 id="stacked_data_products_050-200_kev"><code>Stacked_data_products_0.50-2.00_keV/</code></h3>
-<p>Contains X-ray and gas profiles for every halos in a given <strong>stellar mass</strong> or <strong>halo mass</strong> bin within the <strong>0.50–2.00 keV</strong> energy band. The mean of these profiles in a given mass bin gives the stacked X-ray profile.</p>
+<p>Contains X-ray and gas profiles for every halo in a given <strong>stellar mass</strong> or <strong>halo mass</strong> bin within the <strong>0.50–2.00 keV</strong> energy band. The mean of these profiles in a given mass bin gives the stacked X-ray profile.</p>
 
 
 
