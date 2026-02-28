@@ -142,6 +142,11 @@
   vertical-align: top;
 }
 
+.tng-table th:first-child,
+.tng-table td:first-child {
+  width: 200px;
+}
+
 /* Alternating row shading */
 .tng-table tbody tr:nth-child(even) {
   background-color: #f6f6f6;
@@ -154,7 +159,7 @@
 
 .tng-table code {
   font-family: monospace;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 
 details summary {

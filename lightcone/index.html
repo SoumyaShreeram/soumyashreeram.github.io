@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://soumyashreeram.github.io/soumya_shreeram.github.io/lightcone/">
       
       
-        <link rel="prev" href="../publications/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../data/">
+        <link rel="next" href="../publications/">
       
       
         
@@ -218,25 +218,6 @@
   
   
   
-  
-    <li class="md-tabs__item">
-      <a href="../publications/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Publications
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
     
   
   
@@ -248,6 +229,25 @@
     
   
   TNG Lightcone
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../publications/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Publications
 
       </a>
     </li>
@@ -321,33 +321,6 @@
     
   
     Home
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../publications/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Publications
   
 
     
@@ -472,6 +445,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xrayemission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XrayEmission/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#observer_locationsnpy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -513,6 +497,33 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -616,6 +627,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#xrayemission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XrayEmission/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#observer_locationsnpy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -683,10 +705,125 @@
 <h2 id="directory-file-descriptions">Directory &amp; File Descriptions</h2>
 <p>There are 22 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data within the LC-TNGX directories is structured into 22 snapshot directories. E.g., <code>snapdir_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Each snapshot of the lightcone is further divided into subshells (or bins). Snapshot numbering matches the standard IllustrisTNG convention.</p>
 <h3 id="gasproperties"><code>GasProperties/</code></h3>
-<p>Contains properties of gas cells throughout the lightcone. These files describe the thermodynamic and physical properties of the gas contributing to the lightcone.</p>
-<h3 id="halo-and-subhalo-catalogs">Halo and subhalo catalogs</h3>
+<p>This directory contains the properties of gas cells across the lightcone. The files within describe the thermodynamic and physical characteristics of the gas that contributes to the lightcone. There are 21 snapshot directories, each corresponding to the shells of the lightcone. These are further divided into subshells, which are thin slices in comoving distance from the observer within each shell, to facilitate data management.</p>
+<p>
+The files within each snapshot directory are named 
+<code>Quantities_bin_Y_Z1-Z2_cMpc.h5</code>. Here, <code>Y</code> denotes the 
+bin number corresponding to a subshell, where each shell is thinly sliced in subshells defined by the 
+comoving distance from to the observer for improved data handling. 
+The labels <code>Z1-Z2</code> explicitly specify the comoving distance 
+boundaries of the subshell in cMpc.
+</p>
+
+<details>
+  <summary>
+    snapdir_XX/Quantities_bin_Y_Z1-Z2_cMpc.h5
+  </summary>
+
+  <p style="margin-top: 0.8rem;">
+    Gas cell properties corresponding to the remapped IllustrisTNG snapshots
+    used for construction of the lightcone. Units follow the original
+    IllustrisTNG snapshot specification (PartType0). See:
+    <a href="https://www.tng-project.org/data/docs/specifications/#parttype0" target="_blank">
+      https://www.tng-project.org/data/docs/specifications/#parttype0
+    </a>
+  </p>
+
+  <table class="tng-table">
+    <thead>
+      <tr>
+        <th>Column</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td><code>Zmet</code></td>
+        <td>
+          Gas metallicity. Defined as 
+          <code>GFM_Metallicity / 0.0127</code> from the original TNG snapshot.
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>density</code></td>
+        <td>
+          Gas cell density (same definition as <code>PartType0/Density</code> in TNG).
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>hsml</code></td>
+        <td>
+          Gas cell smoothing length computed as
+          <code>hsml = 2.0 * (3 * vol / (4.0 * π))^(1/3)</code>,
+          where <code>vol</code> is the Voronoi cell volume.
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>mass</code></td>
+        <td>
+          Gas cell mass (same definition as <code>PartType0/Masses</code>).
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>pos</code></td>
+        <td>
+          Three-dimensional comoving position of the gas cell
+          (same definition as <code>PartType0/Coordinates</code>).
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>sfr</code></td>
+        <td>
+          Star formation rate of the gas cell
+          (same definition as <code>PartType0/StarFormationRate</code>).
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>temperature</code></td>
+        <td>
+          Gas temperature derived from internal energy and electron abundance
+          (same definition as <code>PartType0/InternalEnergy</code>-based temperature).
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>vel</code></td>
+        <td>
+          Three-dimensional peculiar velocity of the gas cell
+          (same definition as <code>PartType0/Velocities</code>).
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>x_H</code></td>
+        <td>
+          Hydrogen mass fraction of the gas cell. When not available (e.g., for the mini-snaps), set to 0.76.
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>x_e</code></td>
+        <td>
+          Electron abundance of the gas cell
+          (same definition as <code>PartType0/ElectronAbundance</code>).
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</details>
+
+<h3 id="halo-and-subhalo-catalogs"><code>Halo and subhalo catalogs</code></h3>
 <p>The below two files represent the halo (central galaxies) and subhalo (satellite galaxies) catalog. The quantities are all taken from the original TNG snapshots. </p>
-<details open>
+<details>
 
   <summary>
     central_halo_properties_all_snaps.fits
@@ -799,19 +936,19 @@
     <tr>
       <td><code>X_halo</code></td>
       <td>ckpc</td>
-      <td>Projected X-coordinate of the group.</td>
+      <td>Projected X-coordinate of the group. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
     </tr>
 
     <tr>
       <td><code>Y_halo</code></td>
       <td>ckpc</td>
-      <td>Projected Y-coordinate of the group.</td>
+      <td>Projected Y-coordinate of the group. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
     </tr>
 
     <tr>
       <td><code>Z_halo</code></td>
       <td>ckpc</td>
-      <td>Projected Z-coordinate of the group.</td>
+      <td>Projected Z-coordinate of the group. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
     </tr>
 
     <tr>
@@ -967,22 +1104,19 @@
       <tr>
         <td><code>X_subhalo</code></td>
         <td>ckpc</td>
-        <td>Projected X-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events.
-                                                            Use the RA, Dec., los for cross-matching on the sky.</td>
+        <td>Projected X-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
       </tr>
 
       <tr>
         <td><code>Y_subhalo</code></td>
         <td>ckpc</td>
-        <td>Projected Y-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events.
-                                                            Use the RA, Dec., los for cross-matching on the sky.</td>
+        <td>Projected Y-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
       </tr>
 
       <tr>
         <td><code>Z_subhalo</code></td>
         <td>ckpc</td>
-        <td>Projected Z-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events.
-                                                            Use the RA, Dec., los for cross-matching on the sky.</td>
+        <td>Projected Z-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
       </tr>
 
       <tr>
@@ -1001,13 +1135,425 @@
   </table>
 </details>
 
+<h3 id="xrayemission"><code>XrayEmission/</code></h3>
+<p>Files corresponding to the X-ray emission from gas in LC-TNGX. The X-ray events are generated using pyXsim  in the 0.5 - 2 keV X-ray energy band; they use the latest Asplund et al. 2009 abundance tables.</p>
+<p>In the directory, there are 21 snapshots, <code>SNXX</code>, where <code>XX</code> <span class="arithmatex">\( \in\)</span><code>[78, 96]</code>. This corresponds to the shells of the lightcone. The <code>photons_SNXX.h5</code> files are the merged outputs of the <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/generation.html"><code>make_photons()</code></a> function in pyXSIM. The <code>events_SNXX.h5</code> files are the merged data products of pyXSIM function <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/event_lists.html#event-lists"><code>project_photons()</code></a>, representing the synthetic observations enabling comparison with real observed data (e.g., <a href="https://www.aanda.org/articles/aa/abs/2025/11/aa54508-25/aa54508-25.html">Shreeram et al. 2025b</a>). Please refer to the pyXsim documentation for details on the file properties.</p>
+<p>I've also compiled the <code>events_SNXX.fits</code> file containing a mixture of the most useful quantities from the <code>photons_SNXX.h5</code> and <code>events_SNXX.h5</code> files.</p>
+<details>
+  <summary>
+    events_SNXX.fits
+  </summary>
+
+  <p style="margin-top: 0.8rem;">
+    X-ray photons and event file generated from pyXsim. Each row corresponds to a single detected event in the 0.5−2.0 keV band for a telescope with energy-independent collecting area 1000 cm sq. and exposure time of 1000 ks.
+  </p>
+
+  <table class="tng-table">
+    <thead>
+      <tr>
+        <th>Column</th>
+        <th>Units</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td><code>ra_events</code></td>
+        <td>deg</td>
+        <td>Right Ascension (J2000).</td>
+      </tr>
+
+      <tr>
+        <td><code>dec_events</code></td>
+        <td>deg</td>
+        <td>Declination (J2000).</td>
+      </tr>
+
+      <tr>
+        <td><code>energy</code></td>
+        <td>keV</td>
+        <td>Photon energy.</td>
+      </tr>
+
+      <tr>
+        <td><code>los</code></td>
+        <td>pkpc</td>
+        <td>Line-of-sight distance to the X-ray event.</td>
+      </tr>
+
+      <tr>
+        <td><code>redshift</code></td>
+        <td>–</td>
+        <td>Redshift of the photon.</td>
+      </tr>
+
+      <tr>
+        <td><code>temperature</code></td>
+        <td>K</td>
+        <td>
+          Temperature of the gas cell that is emitting the X-ray photon.
+          Note: the same gas cell may emit multiple photons.
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>density</code></td>
+        <td>g cm<sup>-3</sup></td>
+        <td>Density of the gas cell that is emitting the X-ray photon.</td>
+      </tr>
+
+      <tr>
+        <td><code>x</code></td>
+        <td>ckpc</td>
+        <td>
+          X-coordinate of the gas cell emitting the X-ray photon.
+          Caution: do not use these for cross-matching with FoF halos.
+          Use <code>ra_events</code>, <code>dec_events</code>, and <code>los</code> for cross-matching on the sky.
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>y</code></td>
+        <td>ckpc</td>
+        <td>
+          Y-coordinate of the gas cell emitting the X-ray photon.
+          Caution: do not use these for cross-matching with FoF halos.
+          Use <code>ra_events</code>, <code>dec_events</code>, and <code>los</code> for cross-matching on the sky.
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>z</code></td>
+        <td>ckpc</td>
+        <td>
+          Z-coordinate of the gas cell emitting the X-ray photon.
+          Caution: do not use these for cross-matching with FoF halos.
+          Use <code>ra_events</code>, <code>dec_events</code>, and <code>los</code> for cross-matching on the sky.
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</details>
+
 <h3 id="observer_locationsnpy"><code>observer_locations.npy</code></h3>
 <p>Defines the possible observer locations for the generated lightcone. This lightcone and all the data products correspond to the base case observer located at (0, 0, 0). Nevertheless, 8 other possible observer positions are possible.</p>
 <h3 id="snapshot_infocsv"><code>snapshot_info.csv</code></h3>
-<p>Provides metadata describing the structure of the lightcone. Includes information such as: snapshot boundaries within the lightcone, redshift ranges, etc.</p>
+<p>Provides metadata describing the structure of the lightcone. The file includes the following information: </p>
+<details>
+  <summary>
+    snapshot_info.csv
+  </summary>
+
+  <p style="margin-top: 0.8rem;">
+    Snapshot-level information defining the lightcone shell boundaries.
+    Each row corresponds to one snapshot contributing to the lightcone.
+  </p>
+
+  <table class="tng-table">
+    <thead>
+      <tr>
+        <th>Column</th>
+        <th>Units</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td><code>snapshot</code></td>
+        <td>–</td>
+        <td>TNG snapshot number.</td>
+      </tr>
+
+      <tr>
+        <td><code>redshift</code></td>
+        <td>–</td>
+        <td>Redshift of the snapshot in IllustrisTNG.</td>
+      </tr>
+
+      <tr>
+        <td><code>d_c</code></td>
+        <td>Mpc</td>
+        <td>Comoving distance corresponding to the snapshot redshift.</td>
+      </tr>
+
+      <tr>
+        <td><code>d_c_min</code></td>
+        <td>Mpc</td>
+        <td>Minimum comoving distance defining the inner boundary of the shell.</td>
+      </tr>
+
+      <tr>
+        <td><code>d_c_max</code></td>
+        <td>Mpc</td>
+        <td>Maximum comoving distance defining the outer boundary of the shell.</td>
+      </tr>
+
+      <tr>
+        <td><code>redshift_min</code></td>
+        <td>–</td>
+        <td>Minimum redshift corresponding to <code>d_c_min</code>.</td>
+      </tr>
+
+      <tr>
+        <td><code>redshift_max</code></td>
+        <td>–</td>
+        <td>Maximum redshift corresponding to <code>d_c_max</code>.</td>
+      </tr>
+
+      <tr>
+        <td><code>volMpc3</code></td>
+        <td>Mpc<sup>3</sup></td>
+        <td>Comoving volume of the shell subtended by the lightcone.</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</details>
 <p>⚠️ <strong>Recommended starting point:</strong> users are encouraged to inspect this file first to understand the overall layout and organization of the lightcone.</p>
 <h3 id="stacked_data_products_050-200_kev"><code>Stacked_data_products_0.50-2.00_keV/</code></h3>
-<p>Contains X-ray and gas profiles for every halo in a given <strong>stellar mass</strong> or <strong>halo mass</strong> bin within the <strong>0.50–2.00 keV</strong> energy band. The mean of these profiles in a given mass bin gives the stacked X-ray profile.</p>
+<p>This file combines the X-ray and gas property information for every halo in a given <strong>stellar mass</strong> or <strong>halo mass</strong> bin within the <strong>0.50–2.00 keV</strong> X-ray energy band. </p>
+<details>
+  <summary>
+    central_halo_profiles_logM200m_11.5-15.fits
+  </summary>
+
+  <p style="margin-top: 0.8rem;">
+    The central halo profiles for halos in the lightcone with 
+    \( 11.5 \leq \log_{10}(M_{200m}) \leq 15 \).
+    This file combines halo properties with X-ray emission and gas thermodynamic
+    profiles computed in radial bins.
+    The lightcone is constructed primarily for Milky Way and slightly higher mass halos,
+    and is best suited for science cases studying that mass range.
+  </p>
+
+  <table class="tng-table">
+    <thead>
+      <tr>
+        <th>Column</th>
+        <th>Units</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td><code>Halo_ID</code></td>
+        <td>–</td>
+        <td>Halo ID (same definition as in <code>central_halo_properties_all_snaps.fits</code>).</td>
+      </tr>
+
+      <tr>
+        <td><code>snap_nr</code></td>
+        <td>–</td>
+        <td>Snapshot number corresponding to the halo.</td>
+      </tr>
+
+      <tr>
+        <td><code>redshift</code></td>
+        <td>–</td>
+        <td>Redshift of the halo within the lightcone.</td>
+      </tr>
+
+      <tr>
+        <td><code>M200m</code></td>
+        <td>1e10 M<sub>☉</sub></td>
+        <td>Halo mass enclosed within 200× the mean matter density.</td>
+      </tr>
+
+      <tr>
+        <td><code>M200c</code></td>
+        <td>1e10 M<sub>☉</sub></td>
+        <td>Halo mass enclosed within 200× the critical density.</td>
+      </tr>
+
+      <tr>
+        <td><code>M500c</code></td>
+        <td>1e10 M<sub>☉</sub></td>
+        <td>Halo mass enclosed within 500× the critical density.</td>
+      </tr>
+
+      <tr>
+        <td><code>R200m</code></td>
+        <td>ckpc</td>
+        <td>Comoving radius corresponding to <code>M200m</code>.</td>
+      </tr>
+
+      <tr>
+        <td><code>R200c</code></td>
+        <td>ckpc</td>
+        <td>Comoving radius corresponding to <code>M200c</code>.</td>
+      </tr>
+
+      <tr>
+        <td><code>R500c</code></td>
+        <td>ckpc</td>
+        <td>Comoving radius corresponding to <code>M500c</code>.</td>
+      </tr>
+
+      <tr>
+        <td><code>R200c_deg</code></td>
+        <td>deg</td>
+        <td>Angular size corresponding to <code>R200c</code>.</td>
+      </tr>
+
+      <tr>
+        <td><code>M_star_in_2xR_star</code></td>
+        <td>1e10 M<sub>☉</sub></td>
+        <td>Stellar mass within twice the stellar half-mass radius.</td>
+      </tr>
+
+      <tr>
+        <td><code>ra_halo</code></td>
+        <td>deg</td>
+        <td>Right Ascension (J2000) of the halo.</td>
+      </tr>
+
+      <tr>
+        <td><code>dec_halo</code></td>
+        <td>deg</td>
+        <td>Declination (J2000) of the halo.</td>
+      </tr>
+
+      <tr>
+        <td><code>dc_halo</code></td>
+        <td>ckpc</td>
+        <td>Comoving distance to the halo.</td>
+      </tr>
+
+      <tr>
+        <td><code>x_halo</code></td>
+        <td>ckpc</td>
+        <td>Projected X-coordinate of the halo.</td>
+      </tr>
+
+      <tr>
+        <td><code>y_halo</code></td>
+        <td>ckpc</td>
+        <td>Projected Y-coordinate of the halo.</td>
+      </tr>
+
+      <tr>
+        <td><code>z_halo</code></td>
+        <td>ckpc</td>
+        <td>Projected Z-coordinate of the halo.</td>
+      </tr>
+
+      <tr>
+        <td><code>all_profiles_2d</code></td>
+        <td>erg s<sup>-1</sup> cm<sup>-2</sup></td>
+        <td>
+          X-ray surface brightness profile for the halo. Zeros correspond to no
+          events found for the used telescope specifications.
+        </td>
+      </tr>
+
+      <tr>
+        <td><code>all_Lx_2d</code></td>
+        <td>erg s<sup>-1</sup></td>
+        <td>Sum of the X-ray events within <code>R200m</code> of the halo.</td>
+      </tr>
+
+      <tr>
+        <td><code>r_gas_mean</code></td>
+        <td>ckpc</td>
+        <td>Radial bins over which the gas property profiles are computed.</td>
+      </tr>
+
+      <tr>
+        <td><code>den_mw_prof</code></td>
+        <td>M<sub>☉</sub> kpc<sup>-3</sup></td>
+        <td>Density profile, mass-weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>den_vol_prof</code></td>
+        <td>M<sub>☉</sub> kpc<sup>-3</sup></td>
+        <td>Density profile, volume-weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>temp_mw_prof</code></td>
+        <td>keV</td>
+        <td>Temperature profile, mass-weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>temp_vol_prof</code></td>
+        <td>keV</td>
+        <td>Temperature profile, volume-weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>zmet_mw_prof</code></td>
+        <td>–</td>
+        <td>Metallicity profile, mass-weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>zmet_vol_prof</code></td>
+        <td>–</td>
+        <td>Metallicity profile, volume-weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>den_emv_prof</code></td>
+        <td>M<sub>☉</sub> kpc<sup>-3</sup></td>
+        <td>Density profile, emission-measure weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>temp_emv_prof</code></td>
+        <td>keV</td>
+        <td>Temperature profile, emission-measure weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>zmet_emv_prof</code></td>
+        <td>–</td>
+        <td>Metallicity profile, emission-measure weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>mass_vol_prof</code></td>
+        <td>M<sub>☉</sub></td>
+        <td>Volume-weighted mass profile.</td>
+      </tr>
+
+      <tr>
+        <td><code>ne_vol_prof</code></td>
+        <td>cm<sup>-3</sup></td>
+        <td>Electron number density profile (use with caution as it is not tested).</td>
+      </tr>
+
+      <tr>
+        <td><code>gas_mass500c</code></td>
+        <td>M<sub>☉</sub></td>
+        <td>Sum of gas cell masses within <code>R500c</code>; use with caution as it is not volume-weighted.</td>
+      </tr>
+
+      <tr>
+        <td><code>gas_mass200m</code></td>
+        <td>M<sub>☉</sub></td>
+        <td>Sum of gas cell masses within <code>R200m</code>; use with caution as it is not volume-weighted.</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</details>
+
+<p>Note that there is also another file <code>central_halo_profiles_logMstar_10.0-11.6.fits</code>, with identical columns as <code>central_halo_profiles_logM200m_11.5-15.fits</code>. However, this file is a selection of central galaxies within LC-TNGX in a stellar mass range of <span class="arithmatex">\( 10.0 \leq \log_{10}(M_{\star}) \leq 11.6 \)</span>.</p>
+<p>The radial bins over which the X-ray surface brightness profiles (<code>all_profiles_2d</code>) are computed are logarithmically spaced from 0.8 kpc up to 3000 kpc. You can copy the python code snippet below:</p>
+<pre><code class="language-python">r_bins = 10**np.arange(0., 3.51, 0.05)
+</code></pre>
+<p>Note: to obtain the mean X-ray profile in the selected mass/redshift range, average over the halo axis.</p>
+<pre><code>mean_profile = np.mean(out[&quot;all_profiles_2d&quot;], axis=0)
+</code></pre>
 
 
 
