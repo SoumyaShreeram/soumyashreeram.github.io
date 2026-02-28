@@ -67,7 +67,7 @@
 
 .flip-card-back h3 {
   margin-bottom: 0.3rem;
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
 .flip-card-back p {
@@ -104,6 +104,9 @@
   flex-shrink: 0;
 }
 
+
+
+
 /* Stack on mobile */
 @media (max-width: 768px) {
   .profile-container {
@@ -117,3 +120,50 @@
   }
 }
 
+
+
+
+.tng-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.tng-table th {
+  text-align: left;
+  border-bottom: 2px solid #444;
+  padding: 8px 10px;
+}
+
+.tng-table td {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  vertical-align: top;
+}
+
+/* Alternating row shading */
+.tng-table tbody tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+/* Slight hover effect (optional but nice) */
+.tng-table tbody tr:hover {
+  background-color: #ececec;
+}
+
+.tng-table code {
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+details summary {
+  padding: 6px 0;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+details summary:hover {
+  color: #2c5aa0;
+}

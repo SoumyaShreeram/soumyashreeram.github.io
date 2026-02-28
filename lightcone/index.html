@@ -461,10 +461,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#haloproperties" class="md-nav__link">
+  <a href="#halo-and-subhalo-catalogs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HaloProperties/
+        Halo and subhalo catalogs
       
     </span>
   </a>
@@ -605,10 +605,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#haloproperties" class="md-nav__link">
+  <a href="#halo-and-subhalo-catalogs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        HaloProperties/
+        Halo and subhalo catalogs
       
     </span>
   </a>
@@ -684,8 +684,323 @@
 <p>There are 22 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data within the LC-TNGX directories is structured into 22 snapshot directories. E.g., <code>snapdir_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Each snapshot of the lightcone is further divided into subshells (or bins). Snapshot numbering matches the standard IllustrisTNG convention.</p>
 <h3 id="gasproperties"><code>GasProperties/</code></h3>
 <p>Contains properties of gas cells throughout the lightcone. These files describe the thermodynamic and physical properties of the gas contributing to the lightcone.</p>
-<h3 id="haloproperties"><code>HaloProperties/</code></h3>
-<p>Contains halo and subhalo catalogs for each snapshot. There is one file per snapshot that includes all relevant halo (central galaxy) information.</p>
+<h3 id="halo-and-subhalo-catalogs">Halo and subhalo catalogs</h3>
+<p>The below two files represent the halo (central galaxies) and subhalo (satellite galaxies) catalog. The quantities are all taken from the original TNG snapshots. </p>
+<details open>
+
+  <summary>
+    central_halo_properties_all_snaps.fits
+  </summary>
+
+  <p style="margin-top: 0.8rem;">
+    Merged halo catalogue containing all central halos across lightcone snapshots.
+  </p>
+
+    <table class="tng-table">
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>Units</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td><code>Halo_ID</code></td>
+      <td>–</td>
+      <td>Halo ID (count starts from 0).</td>
+    </tr>
+
+    <tr>
+      <td><code>flag_mass</code></td>
+      <td>–</td>
+      <td>Cases exist where SUBFIND does not define a mass for the halo; these cases are flagged with <code>False</code>.</td>
+    </tr>
+
+    <tr>
+      <td><code>RA</code></td>
+      <td>deg</td>
+      <td>Right Ascension (J2000).</td>
+    </tr>
+
+    <tr>
+      <td><code>DEC</code></td>
+      <td>deg</td>
+      <td>Declination (J2000).</td>
+    </tr>
+
+    <tr>
+      <td><code>M500c</code></td>
+      <td>1e10 M<sub>☉</sub></td>
+      <td>Total mass enclosed in a sphere whose mean density is 500× the critical density of the Universe.</td>
+    </tr>
+
+    <tr>
+      <td><code>M200c</code></td>
+      <td>1e10 M<sub>☉</sub></td>
+      <td>Total mass enclosed in a sphere whose mean density is 200× the critical density of the Universe.</td>
+    </tr>
+
+    <tr>
+      <td><code>M200m</code></td>
+      <td>1e10 M<sub>☉</sub></td>
+      <td>Total mass enclosed in a sphere whose mean density is 200× the mean matter density of the Universe.</td>
+    </tr>
+
+    <tr>
+      <td><code>R200c</code></td>
+      <td>ckpc</td>
+      <td>Comoving radius of a sphere centered at (<code>X_halo</code>, <code>Y_halo</code>, <code>Z_halo</code>) whose mean density is 200× the critical density.</td>
+    </tr>
+
+    <tr>
+      <td><code>R200m</code></td>
+      <td>ckpc</td>
+      <td>Comoving radius of a sphere centered at (<code>X_halo</code>, <code>Y_halo</code>, <code>Z_halo</code>) whose mean density is 200× the mean matter density.</td>
+    </tr>
+
+    <tr>
+      <td><code>R500c</code></td>
+      <td>ckpc</td>
+      <td>Comoving radius of a sphere centered at (<code>X_halo</code>, <code>Y_halo</code>, <code>Z_halo</code>) whose mean density is 500× the critical density.</td>
+    </tr>
+
+    <tr>
+      <td><code>R200c_deg</code></td>
+      <td>deg</td>
+      <td>Angular size corresponding to <code>R200c</code>, computed using astropy's <code>arcsec_per_kpc_comoving(redshift)</code>.</td>
+    </tr>
+
+    <tr>
+      <td><code>D_c</code></td>
+      <td>ckpc</td>
+      <td>Comoving distance to the group.</td>
+    </tr>
+
+    <tr>
+      <td><code>redshift</code></td>
+      <td>–</td>
+      <td>Redshift of the group within the framework of the lightcone.</td>
+    </tr>
+
+    <tr>
+      <td><code>subhalo_ids</code></td>
+      <td>–</td>
+      <td>ID into the original TNG300-1 Subhalo catalog.</td>
+    </tr>
+
+    <tr>
+      <td><code>M_star_in_2xR_star</code></td>
+      <td>1e10 M<sub>☉</sub></td>
+      <td>Sum of masses of all particles/cells within twice the stellar half-mass radius.</td>
+    </tr>
+
+    <tr>
+      <td><code>X_halo</code></td>
+      <td>ckpc</td>
+      <td>Projected X-coordinate of the group.</td>
+    </tr>
+
+    <tr>
+      <td><code>Y_halo</code></td>
+      <td>ckpc</td>
+      <td>Projected Y-coordinate of the group.</td>
+    </tr>
+
+    <tr>
+      <td><code>Z_halo</code></td>
+      <td>ckpc</td>
+      <td>Projected Z-coordinate of the group.</td>
+    </tr>
+
+    <tr>
+      <td><code>N_gal</code></td>
+      <td>–</td>
+      <td>Total number of groups in this halo catalog.</td>
+    </tr>
+
+    <tr>
+      <td><code>ARF</code></td>
+      <td>cm<sup>2</sup></td>
+      <td>Effective collecting area defined for generation of events with <code>pyxsim</code>.</td>
+    </tr>
+
+  </tbody>
+</table>
+</details>
+
+<details>
+  <summary>
+    sat_subhalo_properties_all_snaps.fits
+  </summary>
+
+  <p style="margin-top: 0.8rem;">
+    Merged subhalo catalogue containing all satellite subhalos across lightcone snapshots.
+    Definitions follow those of the central halo catalogue; here all entries correspond to satellites.
+  </p>
+
+  <table class="tng-table">
+    <thead>
+      <tr>
+        <th>Column</th>
+        <th>Units</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td><code>Subhalo_ID</code></td>
+        <td>–</td>
+        <td>Subhalo ID (count starts from 0).</td>
+      </tr>
+
+      <tr>
+        <td><code>flag_mass</code></td>
+        <td>–</td>
+        <td>Cases where SUBFIND does not define a mass are flagged with <code>False</code>.</td>
+      </tr>
+
+      <tr>
+        <td><code>Parent_ID</code></td>
+        <td>–</td>
+        <td>ID of the parent distinct halo (<code>Halo_ID</code>).</td>
+      </tr>
+
+      <tr>
+        <td><code>RA</code></td>
+        <td>deg</td>
+        <td>Right Ascension (J2000).</td>
+      </tr>
+
+      <tr>
+        <td><code>DEC</code></td>
+        <td>deg</td>
+        <td>Declination (J2000).</td>
+      </tr>
+
+      <tr>
+        <td><code>M_star_in_2xR_star</code></td>
+        <td>1e10 M<sub>☉</sub></td>
+        <td>Sum of masses of all particles/cells within twice the stellar half-mass radius.</td>
+      </tr>
+
+      <tr>
+        <td><code>Cen_M_star_in_2xR_star</code></td>
+        <td>1e10 M<sub>☉</sub></td>
+        <td>Stellar mass of the corresponding central halo, defined within twice the stellar half-mass radius.</td>
+      </tr>
+
+      <tr>
+        <td><code>subhalo_sfr</code></td>
+        <td>M<sub>☉</sub> yr<sup>-1</sup></td>
+        <td>Star formation rate of the subhalo.</td>
+      </tr>
+
+      <tr>
+        <td><code>stellar_metallicity</code></td>
+        <td>–</td>
+        <td>Stellar metallicity of the subhalo.</td>
+      </tr>
+
+      <tr>
+        <td><code>subhalo_radius</code></td>
+        <td>ckpc</td>
+        <td>Comoving radius of the subhalo.</td>
+      </tr>
+
+      <tr>
+        <td><code>subhalo_radius_deg</code></td>
+        <td>deg</td>
+        <td>Angular size corresponding to <code>subhalo_radius</code>.</td>
+      </tr>
+
+      <tr>
+        <td><code>D_c</code></td>
+        <td>ckpc</td>
+        <td>Comoving distance to the subhalo.</td>
+      </tr>
+
+      <tr>
+        <td><code>redshift</code></td>
+        <td>–</td>
+        <td>Redshift of the subhalo within the framework of the lightcone.</td>
+      </tr>
+
+      <tr>
+        <td><code>M500c</code></td>
+        <td>1e10 M<sub>☉</sub></td>
+        <td>Parent halo mass enclosed within 500× the critical density.</td>
+      </tr>
+
+      <tr>
+        <td><code>M200m</code></td>
+        <td>1e10 M<sub>☉</sub></td>
+        <td>Parent halo mass enclosed within 200× the mean matter density.</td>
+      </tr>
+
+      <tr>
+        <td><code>R200c</code></td>
+        <td>ckpc</td>
+        <td>Comoving radius of the parent halo defined at 200× the critical density.</td>
+      </tr>
+
+      <tr>
+        <td><code>R200m</code></td>
+        <td>ckpc</td>
+        <td>Comoving radius of the parent halo defined at 200× the mean matter density.</td>
+      </tr>
+
+      <tr>
+        <td><code>R500c</code></td>
+        <td>ckpc</td>
+        <td>Comoving radius of the parent halo defined at 500× the critical density.</td>
+      </tr>
+
+      <tr>
+        <td><code>R200c_deg</code></td>
+        <td>deg</td>
+        <td>Angular size corresponding to <code>R200c</code>.</td>
+      </tr>
+
+      <tr>
+        <td><code>X_subhalo</code></td>
+        <td>ckpc</td>
+        <td>Projected X-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events.
+                                                            Use the RA, Dec., los for cross-matching on the sky.</td>
+      </tr>
+
+      <tr>
+        <td><code>Y_subhalo</code></td>
+        <td>ckpc</td>
+        <td>Projected Y-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events.
+                                                            Use the RA, Dec., los for cross-matching on the sky.</td>
+      </tr>
+
+      <tr>
+        <td><code>Z_subhalo</code></td>
+        <td>ckpc</td>
+        <td>Projected Z-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events.
+                                                            Use the RA, Dec., los for cross-matching on the sky.</td>
+      </tr>
+
+      <tr>
+        <td><code>N_gal</code></td>
+        <td>–</td>
+        <td>Total number of satellite subhalos in this catalogue.</td>
+      </tr>
+
+      <tr>
+        <td><code>ARF</code></td>
+        <td>cm<sup>2</sup></td>
+        <td>Effective collecting area defined for generation of events with <code>pyxsim</code>.</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</details>
 <h3 id="observer_locationsnpy"><code>observer_locations.npy</code></h3>
 <p>Defines the possible observer locations for the generated lightcone. This lightcone and all the data products correspond to the base case observer located at (0, 0, 0). Nevertheless, 8 possible observer positions are possible.</p>
 <h3 id="snapshot_infocsv"><code>snapshot_info.csv</code></h3>
