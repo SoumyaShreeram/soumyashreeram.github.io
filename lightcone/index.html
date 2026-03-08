@@ -705,19 +705,15 @@
 <h2 id="directory-file-descriptions">Directory &amp; File Descriptions</h2>
 <p>There are 22 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data within the LC-TNGX directories is structured into 22 snapshot directories. E.g., <code>snapdir_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Each snapshot of the lightcone is further divided into subshells (or bins). Snapshot numbering matches the standard IllustrisTNG convention.</p>
 <h3 id="gasproperties"><code>GasProperties/</code></h3>
-<p>This directory contains the properties of gas cells across the lightcone. The files within describe the thermodynamic and physical characteristics of the gas that contributes to the lightcone. There are 21 snapshot directories, each corresponding to the shells of the lightcone. These are further divided into subshells, which are thin slices in comoving distance from the observer within each shell, to facilitate data management.</p>
+<p>This directory contains the properties of gas cells across the lightcone. The files within describe the thermodynamic and physical characteristics of the gas cells from TNG that contributes to the lightcone. There are 21 snapshot directories, each corresponding to the shells of the lightcone.</p>
 <p>
 The files within each snapshot directory are named 
-<code>Quantities_bin_Y_Z1-Z2_cMpc.h5</code>. Here, <code>Y</code> denotes the 
-bin number corresponding to a subshell, where each shell is thinly sliced in subshells defined by the 
-comoving distance from to the observer for improved data handling. 
-The labels <code>Z1-Z2</code> explicitly specify the comoving distance 
-boundaries of the subshell in cMpc.
+<code>gas_quantities_SNXX.h5</code>. Here, `XX` goes from 78-96.
 </p>
 
 <details>
   <summary>
-    snapdir_XX/Quantities_bin_Y_Z1-Z2_cMpc.h5
+    gas_quantities_SNXX.h5
   </summary>
 
   <p style="margin-top: 0.8rem;">
