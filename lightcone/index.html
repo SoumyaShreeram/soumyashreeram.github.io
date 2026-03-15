@@ -701,9 +701,9 @@
 <p>LC-TNGX models the hot gas emission in X-rays in the redshift range <span class="arithmatex">\(0.03 \lesssim z \lesssim 0.3\)</span>, to mock observations in the local Universe. The code used to generate the lightcone is also publicly available: <a href="../data/">LightGen</a>.  </p>
 <p><img alt="Projection illustration" src="../images/figure2.jpeg" />
 <em>Figure 2 from <a href="https://www.aanda.org/articles/aa/pdf/2025/05/aa52271-24.pdf">Shreeram et al. 2025a</a>, showing the projected rest-frame X-ray events from the TNG300 ligthcone in the 0.5−2.0 keV band.</em></p>
-<p>We box remap all snapshots into a configuration where the most extended length of one of the sides is approximately four times the original length (<a href="https://iopscience.iop.org/article/10.1088/0067-0049/190/2/311">Carlson &amp; White 2010</a>; see also <a href="https://mwhite.berkeley.edu/BoxRemap/">this</a> website). This technique ensures that the new elongated box has a one-to-one remapping, remains volume-preserving, and preserves local structures. For a box whose original dimensions are normalized to <span class="arithmatex">\((1,1,1)\)</span>, the unique solution for the transformed box sides is <span class="arithmatex">\((4.1231, 0.7276, 0.3333)\)</span>. We remap the coordinates of the gas cells, dark matter particles, and the halo and subhalo catalogues.</p>
+<p>We box remap all snapshots into a configuration where the most extended length of one of the sides is approximately four times the original length (<a href="https://iopscience.iop.org/article/10.1088/0067-0049/190/2/311">Carlson &amp; White 2010</a>; see also <a href="https://mwhite.berkeley.edu/BoxRemap/">this</a> website). This technique ensures that the new elongated box has a one-to-one remapping, remains volume-preserving, and preserves local structures. For a box whose original dimensions are normalized to <span class="arithmatex">\((1,1,1)\)</span>, the unique solution for the transformed box sides is <span class="arithmatex">\((4.1231, 0.7276, 0.3333)\)</span>. The opening angles for the observer are (10.16, 4.64) degrees and the area subtended in the sky for the observer is 47.28 sq. degress. We remap the coordinates of the gas cells, dark matter particles, and the halo and subhalo catalogues.</p>
 <h2 id="directory-file-descriptions">Directory &amp; File Descriptions</h2>
-<p>There are 22 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data within the LC-TNGX directories is structured into 22 snapshot directories. E.g., <code>snapdir_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Snapshot numbering matches the standard IllustrisTNG convention. Each of the <code>lightcone_xray_SNXX.hdf5</code> file contains the following subdirectories <code>['Gas', 'XrayEvents', 'XrayPhotons']</code>, which are containing the following information described below.</p>
+<p>This public lightcone is constructed using 19 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data within the LC-TNGX directories is structured into snapshot directories. E.g., <code>snapdir_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Snapshot numbering matches the standard IllustrisTNG convention. Each of the <code>lightcone_xray_SNXX.hdf5</code> file contains the following subdirectories <code>['Gas', 'XrayEvents', 'XrayPhotons']</code>, which are containing the following information described below.</p>
 <pre><code class="language-python">import h5py as h5
 
 with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as f:
@@ -728,7 +728,7 @@ The files within each snapshot directory are named
 
 <details>
   <summary>
-    lightcone_xray_SNXX.hdf5/Gas
+    lightcone_xray_SNXX.hdf5/Gas/data/
   </summary>
 
   <p style="margin-top: 0.8rem;">
@@ -834,8 +834,7 @@ The files within each snapshot directory are named
 
 <h3 id="xrayevents-and-xrayphotons"><code>XrayEvents/</code> and <code>XrayPhotons/</code></h3>
 <p>Files corresponding to the X-ray emission from gas in LC-TNGX. The X-ray events are generated using <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/">pyXSIM</a>  in the 0.5 - 2 keV X-ray energy band, using the <a href="https://arxiv.org/pdf/0909.0948">Asplund et al. 2009</a> abundance tables.</p>
-<p>In the directory, there are 21 snapshot files, <code>SNXX</code>, where <code>XX</code> <span class="arithmatex">\( \in\)</span><code>[78, 96]</code>. This corresponds to the shells of the lightcone. The <code>XrayPhotons/</code> directory is the merged outputs of the <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/generation.html"><code>make_photons()</code></a> function in pyXSIM. The <code>XrayEvents/</code> directory is the merged data products of pyXSIM function <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/event_lists.html#event-lists"><code>project_photons()</code></a>, representing the synthetic observations enabling comparison with real observed data (e.g., <a href="https://www.aanda.org/articles/aa/abs/2025/11/aa54508-25/aa54508-25.html">Shreeram et al. 2025b</a>). Please refer to the pyXsim documentation for details on the file properties.</p>
-<p>The <code>XrayEvents/data</code> folder includes the most useful quantities from the <code>XrayPhotons/</code>.</p>
+<p>In the directory, there are 19 snapshot files, <code>SNXX</code>, where <code>XX</code> <span class="arithmatex">\( \in\)</span><code>[78, 96]</code>. This corresponds to the shells of the lightcone. The <code>XrayPhotons/</code> directory is the merged outputs of the <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/generation.html"><code>make_photons()</code></a> function in pyXSIM. The <code>XrayEvents/</code> directory is the merged data products of pyXSIM function <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/event_lists.html#event-lists"><code>project_photons()</code></a>, representing the synthetic observations enabling comparison with real observed data (e.g., <a href="https://www.aanda.org/articles/aa/abs/2025/11/aa54508-25/aa54508-25.html">Shreeram et al. 2025b</a>). Please refer to the pyXsim documentation for details on the file properties.</p>
 <details>
   <summary>
     lightcone_xray_SNXX.hdf5/XrayEvents
@@ -856,19 +855,19 @@ The files within each snapshot directory are named
     <tbody>
 
       <tr>
-        <td><code>ra_events</code></td>
+        <td><code>xsky</code></td>
         <td>deg</td>
         <td>Right Ascension (J2000).</td>
       </tr>
 
       <tr>
-        <td><code>dec_events</code></td>
+        <td><code>ysky</code></td>
         <td>deg</td>
         <td>Declination (J2000).</td>
       </tr>
 
       <tr>
-        <td><code>energy</code></td>
+        <td><code>eobs</code></td>
         <td>keV</td>
         <td>Photon energy.</td>
       </tr>
@@ -901,32 +900,20 @@ The files within each snapshot directory are named
       </tr>
 
       <tr>
-        <td><code>x</code></td>
+        <td><code>event_positions</code></td>
         <td>ckpc</td>
         <td>
-          X-coordinate of the gas cell emitting the X-ray photon.
+          (X, Y, Z) coordinates of the gas cells emitting the X-ray photon.
           Caution: do not use these for cross-matching with FoF halos.
-          Use <code>ra_events</code>, <code>dec_events</code>, and <code>los</code> for cross-matching on the sky.
+          Use <code>xsky</code>, <code>ysky</code>, and <code>los</code> for cross-matching on the sky.
         </td>
       </tr>
 
       <tr>
-        <td><code>y</code></td>
+        <td><code>num_photons</code></td>
         <td>ckpc</td>
         <td>
-          Y-coordinate of the gas cell emitting the X-ray photon.
-          Caution: do not use these for cross-matching with FoF halos.
-          Use <code>ra_events</code>, <code>dec_events</code>, and <code>los</code> for cross-matching on the sky.
-        </td>
-      </tr>
-
-      <tr>
-        <td><code>z</code></td>
-        <td>ckpc</td>
-        <td>
-          Z-coordinate of the gas cell emitting the X-ray photon.
-          Caution: do not use these for cross-matching with FoF halos.
-          Use <code>ra_events</code>, <code>dec_events</code>, and <code>los</code> for cross-matching on the sky.
+          The number of photons. Here, the value is simply one. The number of photons per gas cell can be found in XrayPhotons/data/num_photons, which provides useful information about the number of X-ray photons emitted per gas cell. 
         </td>
       </tr>
 
