@@ -703,7 +703,7 @@
 <em>Figure 2 from <a href="https://www.aanda.org/articles/aa/pdf/2025/05/aa52271-24.pdf">Shreeram et al. 2025a</a>, showing the projected rest-frame X-ray events from the TNG300 ligthcone in the 0.5−2.0 keV band.</em></p>
 <p>We box remap all snapshots into a configuration where the most extended length of one of the sides is approximately four times the original length (<a href="https://iopscience.iop.org/article/10.1088/0067-0049/190/2/311">Carlson &amp; White 2010</a>; see also <a href="https://mwhite.berkeley.edu/BoxRemap/">this</a> website). This technique ensures that the new elongated box has a one-to-one remapping, remains volume-preserving, and preserves local structures. For a box whose original dimensions are normalized to <span class="arithmatex">\((1,1,1)\)</span>, the unique solution for the transformed box sides is <span class="arithmatex">\((4.1231, 0.7276, 0.3333)\)</span>. The opening angles for the observer are (10.16, 4.64) degrees and the area subtended in the sky for the observer is 47.28 sq. degress. We remap the coordinates of the gas cells, dark matter particles, and the halo and subhalo catalogues.</p>
 <h2 id="directory-file-descriptions">Directory &amp; File Descriptions</h2>
-<p>This public lightcone is constructed using 19 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data within the LC-TNGX directories is structured into snapshot directories. E.g., <code>snapdir_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Snapshot numbering matches the standard IllustrisTNG convention. Each of the <code>lightcone_xray_SNXX.hdf5</code> file contains the following subdirectories <code>['Gas', 'XrayEvents', 'XrayPhotons']</code>, which are containing the following information described below.</p>
+<p>This public lightcone is constructed using 19 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data files of LC-TNGX are named after the snapshots. E.g., <code>lightcone_xray_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Snapshot numbering matches the standard IllustrisTNG convention. Each of the <code>lightcone_xray_SNXX.hdf5</code> file contains the following subdirectories <code>['Gas', 'XrayEvents', 'XrayPhotons']</code>, which are containing the following information described below.</p>
 <pre><code class="language-python">import h5py as h5
 
 with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as f:
@@ -720,12 +720,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 </code></pre>
 <p>We further describe the quantities in the directories <code>Gas/</code>, <code>XrayEvents/</code>, and <code>XrayPhotons/</code> in the following subsections.</p>
 <h3 id="gas"><code>Gas/</code></h3>
-<p>This directory contains the properties of gas cells across the lightcone. The files within describe the thermodynamic and physical characteristics of the gas cells from TNG that contributes to the lightcone. There are 21 snapshot directories, each corresponding to the shells of the lightcone.</p>
-<p>
-The files within each snapshot directory are named 
-<code>lightcone_xray_SNXX.hdf5/Gas</code>. Here, `XX` goes from 78-96.
-</p>
-
+<p>This directory contains the properties of gas cells across the lightcone. The files within describe the thermodynamic and physical characteristics of the gas cells from TNG that contributes to the lightcone. Each snapshot corresponds to a shell of the lightcone.</p>
 <details>
   <summary>
     lightcone_xray_SNXX.hdf5/Gas/data/
@@ -879,7 +874,7 @@ The files within each snapshot directory are named
       </tr>
 
       <tr>
-        <td><code>redshift</code></td>
+        <td><code>redshift_ph</code></td>
         <td>–</td>
         <td>Redshift of the photon.</td>
       </tr>
