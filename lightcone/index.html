@@ -713,7 +713,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
     print(list(f[&quot;XrayPhotons/data&quot;].keys()))
 </code></pre>
 <p>outputs the following:</p>
-<pre><code>['Gas', 'XrayEvents', 'XrayPhotons']
+<pre><code class="language-python">['Gas', 'XrayEvents', 'XrayPhotons']
 ['Zmet', 'density', 'hsml', 'mass', 'pos', 'sfr', 'temperature', 'vel', 'x_H', 'x_e']
 ['density', 'eobs', 'event_positions', 'los', 'num_photons', 'redshift_ph', 'temperature', 'xsky', 'ysky']
 ['density', 'dx', 'energy', 'num_photons', 'temperature', 'vx', 'vy', 'vz', 'x', 'y', 'z']
@@ -829,7 +829,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 
 <h3 id="xrayevents-and-xrayphotons"><code>XrayEvents/</code> and <code>XrayPhotons/</code></h3>
 <p>Files corresponding to the X-ray emission from gas in LC-TNGX. The X-ray events are generated using <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/">pyXSIM</a>  in the 0.5 - 2 keV X-ray energy band, using the <a href="https://arxiv.org/pdf/0909.0948">Asplund et al. 2009</a> abundance tables.</p>
-<p>In the directory, there are 19 snapshot files, <code>SNXX</code>, where <code>XX</code> <span class="arithmatex">\( \in\)</span><code>[78, 96]</code>. This corresponds to the shells of the lightcone. The <code>XrayPhotons/</code> directory is the merged outputs of the <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/generation.html"><code>make_photons()</code></a> function in pyXSIM. The <code>XrayEvents/</code> directory is the merged data products of pyXSIM function <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/event_lists.html#event-lists"><code>project_photons()</code></a>, representing the synthetic observations enabling comparison with real observed data (e.g., <a href="https://www.aanda.org/articles/aa/abs/2025/11/aa54508-25/aa54508-25.html">Shreeram et al. 2025b</a>). Please refer to the pyXsim documentation for details on the file properties.</p>
+<p>The <code>XrayPhotons/</code> directory is the merged outputs of the <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/generation.html"><code>make_photons()</code></a> function in pyXSIM. The <code>XrayEvents/</code> directory is the merged data products of pyXSIM function <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/event_lists.html#event-lists"><code>project_photons()</code></a>, representing the synthetic observations enabling comparison with real observed data (e.g., <a href="https://www.aanda.org/articles/aa/abs/2025/11/aa54508-25/aa54508-25.html">Shreeram et al. 2025b</a>). Please refer to the pyXsim documentation for details on the file properties.</p>
 <details>
   <summary>
     lightcone_xray_SNXX.hdf5/XrayEvents
@@ -1140,7 +1140,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
       <tr>
         <td><code>subhalo_radius</code></td>
         <td>ckpc</td>
-        <td>Comoving radius of the subhalo.</td>
+        <td>Comoving radius containing twice the half of the total stellar mass of this Subhalo.</td>
       </tr>
 
       <tr>
@@ -1545,7 +1545,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 <pre><code class="language-python">r_bins = 10**np.arange(0., 3.51, 0.05)
 </code></pre>
 <p>Note: to obtain the mean X-ray profile in the selected mass/redshift range, average over the halo axis.</p>
-<pre><code>mean_profile = np.mean(out[&quot;all_profiles_2d&quot;], axis=0)
+<pre><code class="language-python">mean_profile = np.mean(out[&quot;all_profiles_2d&quot;], axis=0)
 </code></pre>
 
 
