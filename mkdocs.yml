@@ -1,5 +1,5 @@
 site_name: Soumya Shreeram
-site_description: Astrophysics | Research software developer
+site_description: Astrophysicist | Research software developer
 site_author: Soumya Shreeram
 site_url: https://soumyashreeram.github.io/soumya_shreeram.github.io/
 
@@ -19,10 +19,9 @@ theme:
 
 nav:
   - Home: index.md
-  - Publications: publications.md
   - TNG Lightcone: lightcone.md
+  - Publications: publications.md
   - Data & Software: data.md
-  - Contact: contact.md
 
 markdown_extensions:
   - admonition
@@ -30,3 +29,16 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
