@@ -448,7 +448,7 @@
   <a href="#halo-and-subhalo-catalogs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Halo and subhalo catalogs
+        Halo and subhalo catalogs.
       
     </span>
   </a>
@@ -630,7 +630,7 @@
   <a href="#halo-and-subhalo-catalogs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Halo and subhalo catalogs
+        Halo and subhalo catalogs.
       
     </span>
   </a>
@@ -701,9 +701,9 @@
 <p>LC-TNGX models the hot gas emission in X-rays in the redshift range <span class="arithmatex">\(0.03 \lesssim z \lesssim 0.3\)</span>, to mock observations in the local Universe. The code used to generate the lightcone is also publicly available: <a href="../data/">LightGen</a>.  </p>
 <p><img alt="Projection illustration" src="../images/figure2.jpeg" />
 <em>Figure 2 from <a href="https://www.aanda.org/articles/aa/pdf/2025/05/aa52271-24.pdf">Shreeram et al. 2025a</a>, showing the projected rest-frame X-ray events from the TNG300 ligthcone in the 0.5−2.0 keV band.</em></p>
-<p>We box remap all snapshots into a configuration where the most extended length of one of the sides is approximately four times the original length (<a href="https://iopscience.iop.org/article/10.1088/0067-0049/190/2/311">Carlson &amp; White 2010</a>; see also <a href="https://mwhite.berkeley.edu/BoxRemap/">this</a> website). This technique ensures that the new elongated box has a one-to-one remapping, remains volume-preserving, and preserves local structures. For a box whose original dimensions are normalized to <span class="arithmatex">\((1,1,1)\)</span>, the unique solution for the transformed box sides is <span class="arithmatex">\((4.1231, 0.7276, 0.3333)\)</span>. The opening angles for the observer are (10.16, 4.64) degrees and the area subtended in the sky for the observer is 47.28 sq. degress. We remap the coordinates of the gas cells, dark matter particles, and the halo and subhalo catalogues.</p>
+<p>We box remap all snapshots into a configuration where the most extended length of one of the sides is approximately four times the original length (<a href="https://iopscience.iop.org/article/10.1088/0067-0049/190/2/311">Carlson &amp; White 2010</a>; see also <a href="https://mwhite.berkeley.edu/BoxRemap/">this</a> website). This technique ensures that the new elongated box has a one-to-one remapping, remains volume-preserving, and preserves local structures. For a box whose original dimensions are normalized to <span class="arithmatex">\((1,1,1)\)</span>, the unique solution for the transformed box sides is <span class="arithmatex">\((4.1231, 0.7276, 0.3333)\)</span>. The opening angles for the observer are (10.16, 4.64) degrees, and the area subtended in the sky for the observer is 47.28 square degrees. We remap the coordinates of the gas cells, dark matter particles, and the halo and subhalo catalogues.</p>
 <h2 id="directory-file-descriptions">Directory &amp; File Descriptions</h2>
-<p>This public lightcone is constructed using 19 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data files of LC-TNGX are named after the snapshots. E.g., <code>lightcone_xray_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Snapshot numbering matches the standard IllustrisTNG convention. Each of the <code>lightcone_xray_SNXX.hdf5</code> file contains the following subdirectories <code>['Gas', 'XrayEvents', 'XrayPhotons']</code>, which are containing the following information described below.</p>
+<p>This public lightcone is constructed using 19 snapshots within the observationally motivated redshift range <span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span>. Therefore, the data files of LC-TNGX are named after the snapshots. E.g., <code>lightcone_xray_XX</code>, where <code>XX</code> goes from 78-96 (<span class="arithmatex">\(0.03 \leq z \leq 0.3\)</span> ). Snapshot numbering matches the standard IllustrisTNG convention. Each of the <code>lightcone_xray_SNXX.hdf5</code> file contains the following subdirectories: <code>['Gas', 'XrayEvents', 'XrayPhotons']</code>, which contain the following information described below.</p>
 <pre><code class="language-python">import h5py as h5
 
 with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as f:
@@ -720,7 +720,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 </code></pre>
 <p>We further describe the quantities in the directories <code>Gas/</code>, <code>XrayEvents/</code>, and <code>XrayPhotons/</code> in the following subsections.</p>
 <h3 id="gas"><code>Gas/</code></h3>
-<p>This directory contains the properties of gas cells across the lightcone. The files within describe the thermodynamic and physical characteristics of the gas cells from TNG that contributes to the lightcone. Each snapshot corresponds to a shell of the lightcone.</p>
+<p>This directory contains the properties of gas cells across the lightcone. The files within describe the thermodynamic and physical characteristics of the gas cells from TNG that contribute to the lightcone. Each snapshot corresponds to a shell of the lightcone.</p>
 <details>
   <summary>
     lightcone_xray_SNXX.hdf5/Gas/data/
@@ -728,7 +728,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 
   <p style="margin-top: 0.8rem;">
     Gas cell properties corresponding to the remapped IllustrisTNG snapshots
-    used for construction of the lightcone. Units follow the original
+    used for the construction of the lightcone. Units follow the original
     IllustrisTNG snapshot specification (PartType0). See:
     <a href="https://www.tng-project.org/data/docs/specifications/#parttype0" target="_blank">
       https://www.tng-project.org/data/docs/specifications/#parttype0
@@ -829,14 +829,14 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 
 <h3 id="xrayevents-and-xrayphotons"><code>XrayEvents/</code> and <code>XrayPhotons/</code></h3>
 <p>Files corresponding to the X-ray emission from gas in LC-TNGX. The X-ray events are generated using <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/">pyXSIM</a>  in the 0.5 - 2 keV X-ray energy band, using the <a href="https://arxiv.org/pdf/0909.0948">Asplund et al. 2009</a> abundance tables.</p>
-<p>The <code>XrayPhotons/</code> directory is the merged outputs of the <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/generation.html"><code>make_photons()</code></a> function in pyXSIM. The <code>XrayEvents/</code> directory is the merged data products of pyXSIM function <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/event_lists.html#event-lists"><code>project_photons()</code></a>, representing the synthetic observations enabling comparison with real observed data (e.g., <a href="https://www.aanda.org/articles/aa/abs/2025/11/aa54508-25/aa54508-25.html">Shreeram et al. 2025b</a>). Please refer to the pyXsim documentation for details on the file properties.</p>
+<p>The <code>XrayPhotons/</code> directory is the merged outputs of the <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/generation.html"><code>make_photons()</code></a> function in pyXSIM. The <code>XrayEvents/</code> directory is the merged data products of the pyXSIM function <a href="https://hea-www.cfa.harvard.edu/~jzuhone/pyxsim/photon_lists/event_lists.html#event-lists"><code>project_photons()</code></a>, representing the synthetic observations enabling comparison with real observed data (e.g., <a href="https://www.aanda.org/articles/aa/abs/2025/11/aa54508-25/aa54508-25.html">Shreeram et al. 2025b</a>). Please refer to the pyXsim documentation for details on the file properties.</p>
 <details>
   <summary>
     lightcone_xray_SNXX.hdf5/XrayEvents
   </summary>
 
   <p style="margin-top: 0.8rem;">
-    X-ray photons and event file generated from pyXsim. Each row corresponds to a single detected event in the 0.5−2.0 keV band for a telescope with energy-independent collecting area 1000 cm sq. and exposure time of 1000 ks.
+    X-ray photons and event file generated from pyXsim. Each row corresponds to a single detected event in the 0.5−2.0 keV band for a telescope with an energy-independent collecting area of 1000 cm sq. and an exposure time of 1000 ks.
   </p>
 
   <table class="tng-table">
@@ -908,7 +908,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
         <td><code>num_photons</code></td>
         <td>ckpc</td>
         <td>
-          The number of photons. Here, the value is simply one. The number of photons per gas cell can be found in XrayPhotons/data/num_photons, which provides useful information about the number of X-ray photons emitted per gas cell. 
+          The number of photons. Here, the value is simply one. The number of photons per gas cell is in XrayPhotons/data/num_photons, which provides useful information on the number of X-ray photons emitted per gas cell. 
         </td>
       </tr>
 
@@ -917,8 +917,8 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 
 </details>
 
-<h3 id="halo-and-subhalo-catalogs"><code>Halo and subhalo catalogs</code></h3>
-<p>The below two files represent the halo (central galaxies) and subhalo (satellite galaxies) catalog. The quantities are all taken from the original TNG snapshots. </p>
+<h3 id="halo-and-subhalo-catalogs"><code>Halo and subhalo catalogs.</code></h3>
+<p>The two files below represent the halo (central galaxies) and subhalo (satellite galaxies) catalog. The quantities are all taken from the original TNG snapshots. </p>
 <details>
 
   <summary>
@@ -1032,19 +1032,19 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
     <tr>
       <td><code>X_halo</code></td>
       <td>ckpc</td>
-      <td>Projected X-coordinate of the group. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
+      <td>Projected X-coordinate of the group. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., and los for cross-matching on the sky.</td>
     </tr>
 
     <tr>
       <td><code>Y_halo</code></td>
       <td>ckpc</td>
-      <td>Projected Y-coordinate of the group. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
+      <td>Projected Y-coordinate of the group. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., and los for cross-matching on the sky.</td>
     </tr>
 
     <tr>
       <td><code>Z_halo</code></td>
       <td>ckpc</td>
-      <td>Projected Z-coordinate of the group. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
+      <td>Projected Z-coordinate of the group. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., and los for cross-matching on the sky.</td>
     </tr>
 
     <tr>
@@ -1070,7 +1070,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 
   <p style="margin-top: 0.8rem;">
     Merged subhalo catalogue containing all satellite subhalos across lightcone snapshots.
-    Definitions follow those of the central halo catalogue; here all entries correspond to satellites.
+    Definitions follow those of the central halo catalogue; here, all entries correspond to satellites.
   </p>
 
   <table class="tng-table">
@@ -1140,7 +1140,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
       <tr>
         <td><code>subhalo_radius</code></td>
         <td>ckpc</td>
-        <td>Comoving radius containing twice the half of the total stellar mass of this Subhalo.</td>
+        <td>Comoving radius containing twice the half of the total stellar mass of this subhalo.</td>
       </tr>
 
       <tr>
@@ -1200,19 +1200,19 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
       <tr>
         <td><code>X_subhalo</code></td>
         <td>ckpc</td>
-        <td>Projected X-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
+        <td>Projected X-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., and los for cross-matching on the sky.</td>
       </tr>
 
       <tr>
         <td><code>Y_subhalo</code></td>
         <td>ckpc</td>
-        <td>Projected Y-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
+        <td>Projected Y-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., and los for cross-matching on the sky.</td>
       </tr>
 
       <tr>
         <td><code>Z_subhalo</code></td>
         <td>ckpc</td>
-        <td>Projected Z-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., los for cross-matching on the sky.</td>
+        <td>Projected Z-coordinate of the subhalo. Warning: do not use for cross-matching with X-ray events. Use the RA, Dec., and los for cross-matching on the sky.</td>
       </tr>
 
       <tr>
@@ -1310,7 +1310,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 </details>
 <p>⚠️ <strong>Recommended starting point:</strong> users are encouraged to inspect this file first to understand the overall layout and organization of the lightcone.</p>
 <h3 id="xray_products_050-200_kev"><code>Xray_products_0.50-2.00_keV</code></h3>
-<p>This file combines the X-ray and gas property information for every halo in a given <strong>stellar mass</strong> or <strong>halo mass</strong> bin within the <strong>0.50–2.00 keV</strong> X-ray energy band. </p>
+<p>This file combines the X-ray and gas property information for every halo in a given <strong>stellar mass</strong> or <strong>halo mass</strong> bin within the <strong>0.50–2.00 keV</strong> X-ray energy band. Available for download <a href="https://github.com/SoumyaShreeram/soumyashreeram.github.io/tree/main/data">here</a>.</p>
 <details>
   <summary>
     central_halo_profiles_logM200m_11.5-15.fits
@@ -1321,7 +1321,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
     \( 11.5 \leq \log_{10}(M_{200m}) \leq 15 \).
     This file combines halo properties with X-ray emission and gas thermodynamic
     profiles computed in radial bins.
-    The lightcone is constructed primarily for Milky Way and slightly higher mass halos,
+    The lightcone is constructed primarily for the Milky Way and slightly higher mass halos,
     and is best suited for science cases studying that mass range.
   </p>
 
@@ -1442,7 +1442,7 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
         <td>erg s<sup>-1</sup> cm<sup>-2</sup></td>
         <td>
           X-ray surface brightness profile for the halo. Zeros correspond to no
-          events found for the used telescope specifications.
+          events found for the specified telescope.
         </td>
       </tr>
 
@@ -1541,8 +1541,8 @@ with h5.File(f&quot;{filapath}/lightcone_xray_096.hdf5&quot;, &quot;r&quot;) as 
 
 </details>
 
-<p>Note that there is also another file <code>central_halo_profiles_logMstar_10.0-11.6.fits</code>, with identical columns as <code>central_halo_profiles_logM200m_11.5-15.fits</code>. However, this file is a selection of central galaxies within LC-TNGX in a stellar mass range of <span class="arithmatex">\( 10.0 \leq \log_{10}(M_{\star}) \leq 11.6 \)</span>.</p>
-<p>The radial bins over which the X-ray surface brightness profiles (<code>all_profiles_2d</code>) are computed are logarithmically spaced from 0.8 kpc up to 3000 kpc. You can copy the python code snippet below:</p>
+<p>Note that there is also another file <code>central_halo_profiles_logMstar_10.0-11.6.fits</code>, with identical columns as <code>central_halo_profiles_logM200m_11.5-15.fits</code>. However, this file is a selection of central galaxies within LC-TNGX with stellar masses in the range <span class="arithmatex">\( 10.0 \leq \log_{10}(M_{\star}) \leq 11.6 \)</span>.</p>
+<p>The radial bins over which the X-ray surface brightness profiles (<code>all_profiles_2d</code>) are computed are logarithmically spaced from 0.8 kpc up to 3000 kpc. You can copy the Python code snippet below:</p>
 <pre><code class="language-python">r_bins = 10**np.arange(0., 3.51, 0.05)
 </code></pre>
 <p>Note: to obtain the mean X-ray profile in the selected mass/redshift range, average over the halo axis.</p>
